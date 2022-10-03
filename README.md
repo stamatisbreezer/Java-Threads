@@ -1,93 +1,77 @@
 # javaThreads
 
 Multiply Table
-Είναι γνωστό από τη Γραμμική Άλγεβρα ότι μπορούμε να πολλαπλασιάσουμε έναν πίνακα με ένα διάνυσμα από δεξιά, 
-αρκεί το πλήθος των στηλών του πίνακα να είναι ίσο με το πλήθος των γραμμών του διανύσματος. 
-Για παράδειγμα αν έχουμε έναν πίνακα Α με διαστάσεις n x m και ένα διάνυσμα v με διαστάσεις m x 1, 
-τότε το γινόμενο Α * v ισούται με ένα διάνυσμα n x 1 με εφαρμογή της γνωστής μεθόδου πολλαπλασιασμού πίνακα
-με διάνυσμα. Ένα παράδειγμα δίνεται στο ακόλουθο σχήμα.
+The program creates two tables and multiply them. 
+From Linear Algebra, we can multiply a matrix by a vector from the right, as long as the number of its columns is sufficient
+matrix to be equal to the number of rows of the vector. For example if we have a matrix A of dimensions n x m and a vector v of dimensions m x 1, 
+then the product A * v equals an n x 1 vector by applying the well-known matrix multiplication method with vector. 
+An example is given in MultiplyTables.png
+ 
+Assuming we have k threads, where k is a power of 2 and the array has dimensions n x m where n is also a power of 2 and n > k, 
+design a solution that calculates the product A * v using the k threads in the best possible way. 
+The program should "fill" the array A and the vector v with random numbers between 0 and 10.
 
-
-Αν υποθέσουμε ότι διαθέτουμε k νήματα, όπου το k είναι δύναμη του 2 και ο πίνακας έχει
-διαστάσεις n x m όπου το n είναι επίσης δύναμη του 2 και n > k, να σχεδιάσετε μία λύση που να
-υπολογίζει το γινόμενο Α * v χρησιμοποιώντας τα k νήματα με τον καλύτερο δυνατό τρόπο. Το
-πρόγραμμά σας θα πρέπει να “γεμίζει” τον πίνακα Α και το διάνυσμα v με τυχαίους αριθμούς
-μεταξύ 0 και 10.
-
-Ποιές οι μετρήσεις χρόνου για 1, 2, 4 και 8 νήματα.
+Q: What the time needed for 1,2,4 and 8 Threads?
 
 
 
 
 SimpsonsScript
+A file named “simpsons_script_lines.csv” is given which contains the dialogues from all the episodes of the series.
+Each line of the file includes information such as episode, speaking character, location, and the text.
 
-Δίνεται ένα αρχείο με όνομα “simpsons_script_lines.csv” το οποίο περιέχει τους διαλόγους από όλα τα επεισόδια της σειράς. 
-Σε κάθε γραμμή του αρχείου περιλαμβάνονται στοιχεία, όπως το επεισόδιο, ο χαρακτήρας που μιλάει, η τοποθεσία και το ίδιο
-το κείμενο.
-
-Ένα πρόγραμμα σε JAVA που αρχικά θα φορτώνει τις γραμμές του αρχείου σε ένα πίνακα, και στη συνέχεια 
-θα δημιουργεί k νήματα, κάθε ένα από τα οποία θα αναλαμβάνει την επεξεργασία ενός τμήματος του πίνακα. 
-Το πρόγραμμα θα υπολογίζει τα ακόλουθα:
-1) το επεισόδιο στο οποίο οι διάλογοι είχαν το μεγαλύτερο πλήθος λέξεων
-2) την τοποθεσία όπου έλαβαν χώρα οι περισσότερες στιχομυθίες
-3) για κάθε έναν από τους χαρακτήρες Bart, Homer, Margie και Lisa, να εκτυπώσετε την πιο
-κοινή λέξη που χρησιμοποιούν (από 5 χαρακτήρες και πάνω) καθώς και πόσες φορές τη
-χρησιμοποίησαν.
+A program in JAVA that will first load the lines of the file into an array, and then
+will create k threads, each of which will take care of processing a part of the table.
+The program will calculate the following:
+1) the episode in which the dialogues had the largest number of words
+2) the location where most dialogues took place
+3) for each of the characters Bart, Homer, Margie and Lisa, print the most 
+common word they use (from 5 characters or more) as well as how many times was used.
  
+Time measurements for 1, 2, 4 and 8 threads.
 
-Ποιές οι μετρήσεις χρόνου για 1, 2, 4 και 8 νήματα.
+
+
 
 
 
 Ipsum Thread Count
-Θα χρησιμοποιήσουμε ανοιχτά APIs τα οποία μας δίνουν πληροφορίες
-ως κείμενο και από αυτά θα εξάγουμε διάφορα στατιστικά. 
-Τα ακόλουθα APIs,  παράγουν απλό κείμενο με την κλήση της HTTP
-μεθόδου GET:
+We will use open APIs that give us information as text and from them we will extract various statistics.
+The following APIs generate plain text by calling HTTP GET method:
 https://loripsum.net/api/10/plaintext
 http://metaphorpsum.com/paragraphs/10
 
-Πρόγραμμα σε JAVA το οποίο θα χρησιμοποιεί 1, 2, 4 ή 8 νήματα για να πραγματοποιήσει ένα αριθμό κλήσεων k ανά νήμα, 
-σε ένα APIs (θα δίνεται παραμετρικά) για να υπολογίσει τα ακόλουθα:
-1) το μέσο όρο μήκους των λέξεων του κειμένου από όλα τα κείμενα που παράχθηκαν. Σε κάθε
-εκτέλεση (k-κλήσεις επί n-νήματα) θα εκτυπώνεται δηλαδή ένα νούμερο.
-2) το ποσοστό εμφανίσεων των χαρακτήρων του αγγλικού αλφαβήτου από όλα τα κείμενα που
-παράχθηκαν. Σε κάθε εκτέλεση (k-κλήσεις επί n-νήματα) θα εκτυπώνονται δηλαδή 26 νούμερα,
-το άθροισμα των οποίων θα είναι 100.
+Program in JAVA that will use 1, 2, 4 or 8 threads to make a number of calls k per thread,
+to an APIs  to calculate the following:
+1) the average word length of the text from all texts produced. In every
+execution (k-calls on n-threads) i.e. a number will be printed.
+2) the percentage of occurrences of the characters of the English alphabet from all the texts that
+were produced. In each execution (k-calls on n-threads) 26 numbers will be printed,
+the sum of which will be 100.
 
-Να αγνοήσετε τα σημεία στίξης.
-Μετρήσεις χρόνου για 1, 2, 4 και 8 νήματα
+Ignore punctuation.
+Time measurements for 1, 2, 4 and 8 threads
+
+
+
+
 
 
 
 
 
 Shopping With Threads
-Συγχρονισμό και αμοιβαίο αποκλεισμό. 
+Synchronization and mutual exclusion.
 
-Θα προσομοιώσουμε τη λειτουργία ενός καταστήματος πώλησης ενδυμάτων. 
-Η λειτουργία του καταστήματος βασίζεται στους εξής κανόνες που πρέπει να
-υλοποιήσουμε:
-. Στο κατάστημα μπορούν να βρίσκονται ταυτόχρονα το πολύ 40 άτομα.
-. Υπάρχουν δύο χώροι δοκιμής ρούχων, ένας για γυναίκες, ένας για άντρες και το κάθε
-δοκιμαστήριο διαθέτει 5 ξεχωριστά δωμάτια.
-. Στο κατάστημα υπάρχει ένα ταμείο το οποίο όμως λόγω των περιορισμών COVID δεν
-επιτρέπει να βρίσκονται στην ουρά πάνω από 10 άτομα.
+We will simulate the operation of a clothing store.
+The operation of the store is based on the following rules that must implement:
+* A maximum of 40 people can be in the store at the same time.
+* There are two fitting rooms, one for women, one for men and each fitting room has 5 separate rooms.
+* There is a cash register in the store which, however, due to the COVID restrictions does not allow more than 10 people to be in line.
 
-Να υλοποιήσετε την παραπάνω λειτουργικότητα με χρήση σημαφόρων υποθέτοντας ότι το
-ποσοστό γυναικών-ανδρών στο κατάστημα είναι 50%-50%, θεωρώντας ότι ο χρόνος
-εξυπηρέτησης στο ταμείο είναι σταθερός από τη στιγμή που είναι η σειρά μας να πληρώσουμε
-(π.χ., 5 δευτερόλεπτα) και επίσης θεωρώντας ότι το κάθε άτομο χρειάζεται από 3 έως 10
-δευτερόλεπτα για να δοκιμάσει τα ρούχα στο δοκιμαστήριο πριν πάει στο ταμείο. Επίσης να
-θεωρήσετε ότι κάθε 2 έως 5 δευτερόλεπτα εισέρχεται και ένας νέος πελάτης στο κατάστημα για
-να δοκιμάσει και να αγοράσει ρούχα.
-
-Σημείωση: μπορείτε να αλλάξετε τα παραπάνω χρονικά διαστήματα ώστε να δοκιμάσετε τις
-δυνατότητες του συστήματος σε λιγότερο χρόνο.  
-
-Ζητούμενα:
-1) Ο πηγαίος κώδικας σε JAVA που υλοποιεί τα παραπάνω με επαρκή σχόλια με νήματα,
-2) Πως θα μετατρέπατε τη λύση σας εάν αντί για ένα ταμείο είχαμε ένα ταμείο στο γυναικείο
-τμήμα ρούχων και ένα στο ανδρικό τμήμα; Αρκεί η περιγραφή της προσέγγισής σας.
-Προαιρετικά μπορείτε να την υλοποιήσετε.
-3
+Implement the above functionality using semaphores assuming that the
+percentage of women-men in the store is 50%-50%, considering that the time
+service at the checkout is constant from the moment it's our turn to pay
+(eg, 5 seconds) and also assuming that each person needs from 3 to 10
+seconds to try on clothes in the fitting room before going to checkout. Also consider that every 2 to 5 seconds a new customer enters the store 
+to try on and buy clothes.
