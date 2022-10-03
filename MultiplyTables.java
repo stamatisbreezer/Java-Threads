@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package thema1;
 
 import java.util.Random;
@@ -10,18 +5,18 @@ import java.util.Scanner;
 
 /**
  * @author Stamatis Chatzichristodoulou <breezer77@gmail.com>
- * The program creates two tables of 
- * MultiplyTables
- * from Linear Algebra, we can multiply a matrix by a vector from the right, as long as the number of its columns is sufficient
+ 
+ * The program creates two tables and multiply them. 
+ * From Linear Algebra, we can multiply a matrix by a vector from the right, as long as the number of its columns is sufficient
  * matrix to be equal to the number of rows of the vector. For example if we have a matrix A of dimensions n x m and a vector v of dimensions m x 1, 
  * then the product A * v equals an n x 1 vector by applying the well-known matrix multiplication method with vector. 
- * An example is given in figure1.
+ * An example is given in MultiplyTables.png
  * 
  * Assuming we have k threads, where k is a power of 2 and the array has dimensions n x m where n is also a power of 2 and n > k, 
  * design a solution that calculates the product A * v using the k threads in the best possible way. 
  * The program should "fill" the array A and the vector v with random numbers between 0 and 10.
  * 
- * What the time needed for 1,2,4 and 8 Threads.
+ * Q: What the time needed for 1,2,4 and 8 Threads?
  */
 
 public class MultiplyTables extends Thread {
