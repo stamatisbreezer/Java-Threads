@@ -87,7 +87,7 @@ using interprocess communication techniques.
 We will use Java Sockets to synchronize processes that run on different computing systems.
 
 
->>SC_Hash
+>>ServerClient_HashTable
 An application involving process communication with TCP sockets.
 Server: The server starts its operation by building an empty hashtable that stores key-value pairs. 
 The size of the matrix is ​​2^20. It then opens a socket in the door we pass through
