@@ -1,6 +1,6 @@
 # javaThreads
 
->>Multiply Table
+- Multiply Table
 The program creates two tables and multiply them. 
 From Linear Algebra, we can multiply a matrix by a vector from the right, as long as the number of its columns is sufficient
 matrix to be equal to the number of rows of the vector. For example if we have a matrix A of dimensions n x m and a vector v of dimensions m x 1, 
@@ -14,10 +14,10 @@ The program should "fill" the array A and the vector v with random numbers betwe
 Q: What the time needed for 1,2,4 and 8 Threads?
 
 
+******************
 
 
-
->>SimpsonsScript
+- SimpsonsScript
 A file named “simpsons_script_lines.csv” is given which contains the dialogues from all the episodes of the series.
 Each line of the file includes information such as episode, speaking character, location, and the text.
 
@@ -32,11 +32,10 @@ common word they use (from 5 characters or more) as well as how many times was u
 Time measurements for 1, 2, 4 and 8 threads.
 
 
+******************
 
 
-
-
->>Ipsum Thread Count
+- Ipsum Thread Count
 We will use open APIs that give us information as text and from them we will extract various statistics.
 The following APIs generate plain text by calling HTTP GET method:
 https://loripsum.net/api/10/plaintext
@@ -56,12 +55,12 @@ Time measurements for 1, 2, 4 and 8 threads
 
 
 
+******************
 
 
 
 
-
->>Shopping With Threads
+- Shopping With Threads
 Synchronization and mutual exclusion.
 
 We will simulate the operation of a clothing store.
@@ -79,7 +78,7 @@ to try on and buy clothes.
 
 
 
-
+******************
 
 
 Design and implementation of small-scale distributed systems,
@@ -87,7 +86,7 @@ using interprocess communication techniques.
 We will use Java Sockets to synchronize processes that run on different computing systems.
 
 
->>Server Client HashTable
+- Server Client HashTable
 An application involving process communication with TCP sockets.
 Server: The server starts its operation by building an empty hashtable that stores key-value pairs. 
 The size of the matrix is ​​2^20. It then opens a socket in the door we pass through
@@ -111,10 +110,10 @@ returns to the client the corresponding value or 0 if the key does not exist.
 The connection is removed when the client sends the (0,0) command.
 Commands are read from the keyboard.
 
+******************
 
 
-
->>Server Client Producer Consumer
+- Server Client Producer Consumer
 Let be a process system consisting of consumer, producer type processes
 and servers that communicate with TCP sockets. 
 Each server has an integer variable (even storage) that records their inventory
